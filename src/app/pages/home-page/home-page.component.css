@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Love+Light&family=Pacifico&display=swap');
+.welcome-header {
+margin-top: 10%;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+align-items: center;
+background-color: #D8F3DC;
+}
+
+.welcome-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    color: #1B4332;
+}
+
+.blog-post {
+    max-width: 800px;
+    font-size: 25px;
+    color: #1B4332;
+    margin: auto;
+    padding: 1rem;
+    background: #B7E4C7;
+    box-shadow: 0 0 5px 0 #bbb;
+    border-radius: 2%;
+}
+
+#middle-drugs {
+    margin-top: 5%;
+    width: 80px;
+}
