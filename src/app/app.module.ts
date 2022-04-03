@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HeaderComponent } from './core/header/header.component';
 import { PagesModule } from './feature/pages/pages.module';
+import { LatestMedsComponent } from './feature/meds/latest-meds/latest-meds.component';
+import { MedsModule } from './feature/meds/meds.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule.forRoot(),
     RouterModule,
-    PagesModule
+    PagesModule,
+    MedsModule
   ],
   providers: [],
   bootstrap: [

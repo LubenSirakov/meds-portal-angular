@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Love+Light&family=Pacifico&display=swap');
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+}
+
+.menu-item {
+    list-style: none;
+    margin-right: 5px;
+}
+
+a {
+    text-decoration: none;
+}
