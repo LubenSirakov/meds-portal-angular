@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllMedsComponent } from './pages/all-meds/all-meds.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent } from './feature/pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -12,10 +11,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent
-  },
-  {
-    path: 'all-meds',
-    component: AllMedsComponent
   }
 ];
 

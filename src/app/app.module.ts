@@ -4,8 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AllMedsComponent } from './pages/all-meds/all-meds.component';
-import { PagesModule } from './pages/pages.module';
+import { CoreModule } from './core/core.module';
+import { HeaderComponent } from './core/header/header.component';
+import { PagesModule } from './feature/pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -14,10 +15,14 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule.forRoot(),
     RouterModule,
     PagesModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent,
+    HeaderComponent
+  ]
 })
 export class AppModule { }
