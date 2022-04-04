@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IMed } from './interfaces/med';
 
-const apiUrl = 'https://meds-portal-69e7a-default-rtdb.europe-west1.firebasedatabase.app/';
+const apiUrl = 'https://meds-portal-69e7a-default-rtdb.europe-west1.firebasedatabase.app';
 
-@Injectable()
+@Injectable() 
 export class MedsService {
 
   constructor(private http: HttpClient) { }

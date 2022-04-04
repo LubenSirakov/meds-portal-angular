@@ -6,14 +6,14 @@ import { IMed } from 'src/app/core/interfaces/med';
   templateUrl: './meds-list-litem.component.html',
   styleUrls: ['./meds-list-litem.component.css']
 })
-export class MedsListLitemComponent implements OnChanges {
+export class MedsListLitemComponent implements OnChanges, OnInit {
 
   @Input() med!: IMed;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.med)
+    console.log(this.med.name)
     throw new Error('Method not implemented.');
   }
 

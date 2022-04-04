@@ -9,12 +9,13 @@ import { MedsService } from 'src/app/core/meds.service';
 })
 export class MedsListComponent implements OnInit, AfterViewInit{
 
-  medList!: IMed[];
+  medList: IMed[] = [];
 
   constructor(private medService: MedsService) { }
 
   ngOnInit(): void {
     this.medService.loadMedsList().subscribe(medList => {
+      Object.values(medList)
       this.medList = medList;
       console.log(this.medList)
     })
