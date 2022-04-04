@@ -9,6 +9,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { PagesModule } from './feature/pages/pages.module';
 import { LatestMedsComponent } from './feature/meds/latest-meds/latest-meds.component';
 import { MedsModule } from './feature/meds/meds.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MedsModule } from './feature/meds/meds.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule.forRoot(),
     RouterModule,
     PagesModule,
