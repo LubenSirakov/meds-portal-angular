@@ -1,14 +1,6 @@
 <div *ngIf="medList">
-    <!-- <div *ngFor="let med of medList | keyvalue">
-        {{med.key}}: {{med.value}} -->
-    <!-- <app-meds-list-litem *ngFor="let currentMed of med | keyvalue"></app-meds-list-litem> -->
-
-    <!-- </div> -->
-    <!-- <app-theme-list-item *ngFor="let theme of medList" [theme]="theme"></app-theme-list-item> -->
-    <app-meds-list-litem *ngFor="let med of medList | keyvalue">
-        
-    </app-meds-list-litem>
-    <div *ngIf="medList.length === 0">No Themes!</div>
+        <app-meds-list-litem *ngFor="let med of medList" [med]="med"></app-meds-list-litem>
+    <!-- <div *ngIf="medList.length === 0">No Themes!</div> -->
 </div>
 <div *ngIf="!medList">
     Loading...

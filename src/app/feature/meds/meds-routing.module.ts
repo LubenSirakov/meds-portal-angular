@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LatestMedsComponent } from './latest-meds/latest-meds.component';
 import { MedsListComponent } from './meds-list/meds-list.component';
+import { MedsPageComponent } from './meds-page/meds-page.component';
 
 const routes: Routes = [
   {
-    path: 'latest-meds',
-    component: LatestMedsComponent
-  },
-  {
     path: 'meds-list',
-    component: MedsListComponent
-  }
+    component: MedsPageComponent
+  },
+  // {
+  //   path: 'latest-meds',
+  //   component: LatestMedsComponent
+  // },
 ]
 
 export const MedsRoutingModule = RouterModule.forChild(routes);

@@ -10,8 +10,8 @@ export class MedsService {
 
   constructor(private http: HttpClient) { }
 
-  loadMedsList(): Observable<IMed[]> {
-    return this.http.get<IMed[]>(`${apiUrl}/meds.json`)
+  loadMedList(): Observable<IMed[]> {
+    return this.http.get<IMed[]>(`${apiUrl}/meds.json`);
   }
 
 }

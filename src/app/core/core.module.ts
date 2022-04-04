@@ -13,6 +13,12 @@ import { MedsService } from './meds.service';
   imports: [
     CommonModule,
     RouterModule
+  ],
+  exports: [
+    HeaderComponent
+  ],
+  providers: [
+    MedsService
   ]
 })
 export class CoreModule { 
