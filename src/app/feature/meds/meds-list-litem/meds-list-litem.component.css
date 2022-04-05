@@ -1,0 +1,9 @@
+.card {
+    min-width: 400px;
+    border: 1px solid black;
+}
+
+.med-image {
+    max-width: 300px;
+    max-height: 200px;
+}

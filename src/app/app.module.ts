@@ -14,6 +14,9 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -21,17 +24,20 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     CoreModule.forRoot(),
+    AppRoutingModule,
+    MedsModule,
     RouterModule,
     PagesModule,
-    MedsModule,
+    AuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase())
+    provideDatabase(() => getDatabase()),
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [
     AppComponent,
     HeaderComponent

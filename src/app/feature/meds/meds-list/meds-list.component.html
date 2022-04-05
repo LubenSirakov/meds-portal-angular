@@ -1,6 +1,6 @@
-<div *ngIf="medList">
+<div *ngIf="medList" class="meds-list">
         <app-meds-list-litem *ngFor="let med of medList" [med]="med"></app-meds-list-litem>
-    <!-- <div *ngIf="medList.length === 0">No Themes!</div> -->
+    <div *ngIf="medList.length === 0">No Themes!</div>
 </div>
 <div *ngIf="!medList">
     Loading...

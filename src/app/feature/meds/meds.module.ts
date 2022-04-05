@@ -23,6 +23,13 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     SharedModule,
     MedsRoutingModule,
     provideDatabase(() => getDatabase())
+  ],
+  exports: [
+    MedsPageComponent,
+    MedsListComponent,
+    MedsListLitemComponent,
+    LatestMedsComponent,
+    MedsPageComponent,
   ]
 })
 export class MedsModule { }

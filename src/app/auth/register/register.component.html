@@ -1,0 +1,16 @@
+<div class="form-wrapper">
+    <form class="register">
+        <h2>Register<img id='register-drug' src='https://cdn-icons-png.flaticon.com/512/1546/1546140.png'/></h2>
+        <div class="mb-3">
+            <label for="exampleInputEmail" class="form-label">Email address</label>
+            <input onChange={handleChange} type="email" name="email" value={input.email} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input onChange={handleChange} type="password" name="password" value={input.password} class="form-control" id="exampleInputPassword1" />
+        </div>
+        <button onClick={onRegisterClick} type="submit" class="submit">Submit</button>
+        <p>Already have an account? <a to="/login">Login</a></p>
+
+    </form>
+</div>

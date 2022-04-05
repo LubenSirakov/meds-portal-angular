@@ -1,5 +1,5 @@
 <div class="card" *ngIf="med">
-    <img src={{med.imgUrl}} alt='image' />
+    <img src={{med.imgUrl}} alt={{med.name}} class="med-image" />
     <div class="card-body">
         <h2>{{med.name}}</h2>
         <p>Count of tablets: {{med.count}}</p>

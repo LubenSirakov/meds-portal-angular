@@ -7,7 +7,7 @@ import { MedsPageComponent } from './meds-page/meds-page.component';
 
 const routes: Routes = [
   {
-    path: 'meds-list',
+    path: 'all-meds',
     component: MedsPageComponent
   },
   // {
