@@ -3,6 +3,7 @@ body{
     background-color: #D8F3DC;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 #rootcontainer {
