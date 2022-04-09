@@ -18,10 +18,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthModule } from './auth/auth.module';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { MedsNewPageComponent } from './feature/meds/meds-new-page/meds-new-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MedsNewPageComponent
   ],
   imports: [
     BrowserModule,
