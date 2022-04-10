@@ -19,6 +19,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { AuthModule } from './auth/auth.module';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { MedsNewPageComponent } from './feature/meds/meds-new-page/meds-new-page.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AuthService } from './auth.service';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [
@@ -33,13 +36,12 @@ import { MedsNewPageComponent } from './feature/meds/meds-new-page/meds-new-page
     RouterModule,
     PagesModule,
     AuthModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    provideAuth(() => getAuth()),
-    provideDatabase(() => getDatabase()),
+    AngularFireDatabaseModule
   ],
   providers: [
-
+    AuthService
   ],
   bootstrap: [
     AppComponent,
