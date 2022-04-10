@@ -1,16 +1,20 @@
-<form class="login">
+<form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
+    
     <h2>Login<img id='login-drug' src='https://cdn-icons-png.flaticon.com/512/1546/1546140.png' /></h2>
+    
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input onChange={handleChange} type="email" name="email" value={input.email} class="form-control"
+        <label for="email" class="form-label">Email address</label>
+        <input formControlName="email" type="email" name="email"  class="form-control"
             id="exampleInputEmail1" aria-describedby="emailHelp" />
     </div>
+
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input onChange={handleChange} type="password" name="password" value={input.password} class="form-control"
+        <label for="password" class="form-label">Password</label>
+        <input formControlName="password" type="password" name="password" class="form-control"
             id="exampleInputPassword1" />
     </div>
-    <button onClick={onLoginClick} type="submit" class="submit">Submit</button>
+
+    <button [disabled]="loginFormGroup.invalid" class="submit">Submit</button>
     <p>New here?
         <a to="/register">Register</a>
     </p>

@@ -23,7 +23,6 @@ import { MedsNewPageComponent } from './feature/meds/meds-new-page/meds-new-page
 @NgModule({
   declarations: [
     AppComponent,
-    MedsNewPageComponent
   ],
   imports: [
     BrowserModule,
