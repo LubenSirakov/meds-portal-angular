@@ -1,13 +1,12 @@
 <nav id="navbar">
 
     <div class="logo">
-        <img id='drug-icon'
-            src='../../../assets/drugs.png' />
+        <img id='drug-icon' src='../../../assets/drugs.png' />
         <a routerLink="/" class="logo-tag">Meds Portal</a>
     </div>
 
 
-    <ul id="menu">
+    <ul id="menu" *ngIf="!(isLoggedIn$ | async)">
         <li class="menu-item">
             <a class="menu-item-link" href="/all-meds">All meds</a>
         </li>
@@ -17,7 +16,11 @@
         <li class="menu-item">
             <a routerLink="/login">Login</a>
         </li>
-        <li class="menu-item">Welcome user</li>
+    </ul>
+
+    <ul id="menu" *ngIf="(isLoggedIn$ | async)">
+        <li class="menu-item">Welcome {{(currentUser$ | async)}}</li>
+
         <li class="menu-item">
             <a routerLink="/all-meds">All meds</a>
         </li>
@@ -29,5 +32,4 @@
         </li>
         <button class="logout-button">Logout</button>
     </ul>
-
 </nav>

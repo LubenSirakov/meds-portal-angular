@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { IUser } from './core/interfaces/user';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { signInWithEmailAndPassword } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -12,6 +12,12 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
   userData: Observable<any>;
+
+  private _currentUser = new BehaviorSubject<any>(undefined);
+
+  currentUser$ = this._currentUser.asObservable();
+  isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
+
   constructor(private angularFireAuth: AngularFireAuth) {
     this.userData = angularFireAuth.authState
   }

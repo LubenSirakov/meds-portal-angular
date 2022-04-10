@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('',{validators: [Validators.required, emailValidator], updateOn: 'blur'}),
-    'password': new FormControl(null, [Validators.required, Validators.minLength(5)])
-  })
+    'password': new FormControl('', [Validators.required, Validators.minLength(5)])
+  });
 
   constructor(
     private formBuilder: FormBuilder,
