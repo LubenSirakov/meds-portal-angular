@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
@@ -9,10 +9,13 @@ import { IUser } from '../interfaces/user';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnChanges {
 
   currentUser$: Observable<IUser> = this.authService.currentUser$;
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
+
+  // currentUser = '';
+  // isLoggedIn = false;
 
   private isLoggingOut: boolean = false;
 
@@ -26,8 +29,31 @@ export class HeaderComponent {
 
   }
 
-  // logoutHandler(): void {
-  //   this.userService.logout();
-  // }
+  ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // this.currentUser = this.authService.currentUser$;
+    // this.isLoggedIn = this.authService.isLoggedIn$;
+
+    console.log(this.currentUser$)
+  }
+
+  logoutHandler(): void {
+
+    if (this.isLoggingOut) {
+      return;
+    }
+
+    try {
+      this.authService.logout();
+
+      this.router.navigate(['/home']);
+    } catch (error) {
+      this.isLoggingOut = false;
+      console.log(error)
+    }
+
+  }
 
 }

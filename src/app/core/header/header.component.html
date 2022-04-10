@@ -6,7 +6,7 @@
     </div>
 
 
-    <ul id="menu" *ngIf="!(isLoggedIn$ | async)">
+    <ul id="menu" *ngIf="!(authService.userData | async)">
         <li class="menu-item">
             <a class="menu-item-link" href="/all-meds">All meds</a>
         </li>
@@ -18,8 +18,8 @@
         </li>
     </ul>
 
-    <ul id="menu" *ngIf="(isLoggedIn$ | async)">
-        <li class="menu-item">Welcome {{(currentUser$ | async)}}</li>
+    <ul id="menu" *ngIf="(authService.userData | async)">
+        <li class="menu-item" *ngIf="authService.userData | async">Welcome {{(authService.userData | async)?.email}} </li>
 
         <li class="menu-item">
             <a routerLink="/all-meds">All meds</a>
@@ -30,6 +30,8 @@
         <li class="menu-item">
             <a routerLink="/my-profile">My Profile</a>
         </li>
-        <button class="logout-button">Logout</button>
+        <li class="menu-item">
+            <a href="javascript:void(0)" (click)="logoutHandler()">Logout</a>
+        </li>
     </ul>
 </nav>

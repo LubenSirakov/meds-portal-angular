@@ -27,9 +27,15 @@ export class RegisterComponent implements OnInit {
     let email = this.registerFormGroup.value['email'];
     let password = this.registerFormGroup.value['password'];
     console.log(email, password);
-    this.authService.register(email, password);
 
-    this.router.navigate(['/home']);
+    try {
+      this.authService.register(email, password);
+      
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
 }

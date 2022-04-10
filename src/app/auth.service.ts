@@ -16,7 +16,9 @@ export class AuthService {
   private _currentUser = new BehaviorSubject<any>(undefined);
 
   currentUser$ = this._currentUser.asObservable();
-  isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
+  isLoggedIn$ = this.currentUser$.pipe(map(userData => !!userData));
+  // currentUser = '';
+  // isLoggedIn = false;
 
   constructor(private angularFireAuth: AngularFireAuth) {
     this.userData = angularFireAuth.authState
@@ -26,6 +28,8 @@ export class AuthService {
     this.angularFireAuth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
+        // this.currentUser = email;
+        // this.isLoggedIn = true;
         console.log('Successfully registered!', res);
       })
       .catch(error => {
@@ -37,6 +41,8 @@ export class AuthService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then(res => {
+        // this.currentUser = email;
+        // this.isLoggedIn = true;
         console.log('Successfuly logged in!', res)
       })
       .catch(error => {
@@ -47,6 +53,20 @@ export class AuthService {
   logout() {
     this.angularFireAuth
       .signOut();
+  }
+
+  // authenticate(): Observable<IUser> {
+  //   return this.angularFireAuth
+  //     .get<IUser>()
+
+  // }
+
+  handleLogin(newUser: IUser) {
+    this._currentUser.next(newUser);
+  }
+
+  handleLogout() {
+    this._currentUser.next(undefined)
   }
 
 

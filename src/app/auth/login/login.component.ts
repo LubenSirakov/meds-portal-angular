@@ -29,9 +29,15 @@ export class LoginComponent implements OnInit {
   handleLogin(): void {
     let email = this.loginFormGroup.value['email']
     let password = this.loginFormGroup.value['password']
-    this.authService.login(email, password)
 
-    this.router.navigate(['/home'])
+    try {
+      this.authService.login(email, password)
+      
+      this.router.navigate(['/home'])
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   // handleLogin(): void {
