@@ -5,6 +5,7 @@ import { LatestMedsComponent } from './latest-meds/latest-meds.component';
 import { MedsListComponent } from './meds-list/meds-list.component';
 import { MedsPageComponent } from './meds-page/meds-page.component';
 import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'meds/new',
-    //canActivate:  [AuthGuard]
+    canActivate:  [AuthGuard],
     component: MedsNewPageComponent
   }
   // {

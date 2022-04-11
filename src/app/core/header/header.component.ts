@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    console.log(this.currentUser$)
   }
 
   ngOnChanges(changes: SimpleChanges): void {

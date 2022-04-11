@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth.service';
+import { IUser } from 'src/app/core/interfaces/user';
 import { MedsService } from 'src/app/core/meds.service';
+import * as uniqId from 'uniqid';
 
 @Component({
   selector: 'app-meds-new-page',
@@ -10,14 +14,20 @@ import { MedsService } from 'src/app/core/meds.service';
 })
 export class MedsNewPageComponent implements OnInit {
 
-  constructor(private router: Router, private medService: MedsService) { }
+  // currentUser$: Observable<IUser> = this.authService.currentUser$;
+  currentUserId = this.authService.currentUserId;
+
+  constructor(private router: Router, private medService: MedsService, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   submitNewMed(newMedForm: NgForm): void {
-    this.medService.addMed$(newMedForm.value).subscribe({
+    let medForm = {... newMedForm.value, owner: this.currentUserId, medId: uniqId() }
+    console.log(medForm)
+    this.medService.addMed$(medForm).subscribe({
       next: (med) => {
+        console.log(med)
         this.router.navigate(['/meds']);
       },
       error: (error) => {

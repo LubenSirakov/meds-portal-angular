@@ -6,7 +6,8 @@ import { MedsRoutingModule } from './meds-routing.module';
 import { MedsListComponent } from './meds-list/meds-list.component';
 import { MedsListLitemComponent } from './meds-list-litem/meds-list-litem.component';
 import { MedsPageComponent } from './meds-page/meds-page.component';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { FormsModule } from '@angular/forms';
+import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
 
 
 
@@ -17,12 +18,13 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     MedsListLitemComponent,
     LatestMedsComponent,
     MedsPageComponent,
+    MedsNewPageComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     MedsRoutingModule,
-    provideDatabase(() => getDatabase())
+    FormsModule
   ],
   exports: [
     MedsPageComponent,

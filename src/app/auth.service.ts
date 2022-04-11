@@ -17,8 +17,10 @@ export class AuthService {
 
   currentUser$ = this._currentUser.asObservable();
   isLoggedIn$ = this.currentUser$.pipe(map(userData => !!userData));
-  // currentUser = '';
-  // isLoggedIn = false;
+
+  user: any;
+  currentUserId?: string = '';
+  isLoggedIn = false;
 
   constructor(private angularFireAuth: AngularFireAuth) {
     this.userData = angularFireAuth.authState
@@ -28,8 +30,9 @@ export class AuthService {
     this.angularFireAuth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
-        // this.currentUser = email;
-        // this.isLoggedIn = true;
+        this.currentUserId = res.user?.uid;
+        localStorage.setItem('userId', this.currentUserId!)
+        this.isLoggedIn = true;
         console.log('Successfully registered!', res);
       })
       .catch(error => {
@@ -41,8 +44,11 @@ export class AuthService {
     this.angularFireAuth
       .signInWithEmailAndPassword(email, password)
       .then(res => {
-        // this.currentUser = email;
-        // this.isLoggedIn = true;
+        this.user = res.user
+        console.log(this.user)
+        this.currentUserId = res.user?.uid;
+        localStorage.setItem('userId', this.currentUserId!)
+        this.isLoggedIn = true;
         console.log('Successfuly logged in!', res)
       })
       .catch(error => {
@@ -51,6 +57,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.clear();
     this.angularFireAuth
       .signOut();
   }
