@@ -28,7 +28,7 @@ export class MedsNewPageComponent implements OnInit {
     this.medService.addMed$(medForm).subscribe({
       next: (med) => {
         console.log(med)
-        this.router.navigate(['/meds']);
+        this.router.navigate(['/all-meds']);
       },
       error: (error) => {
         console.log(error);

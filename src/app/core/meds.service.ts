@@ -23,7 +23,7 @@ export class MedsService {
       medId: string,
       lists: []
     }): Observable<IMed> {
-    return this.http.post<IMed>(`${apiUrl}/meds${body.medId}`, body);
+    return this.http.post<IMed>(`${apiUrl}/meds.json`, body);
   }
 
   loadMedList(): Observable<IMed[]> {
