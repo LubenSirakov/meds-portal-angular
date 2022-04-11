@@ -30,4 +30,8 @@ export class MedsService {
     return this.http.get<IMed[]>(`${apiUrl}/meds.json`);
   }
 
+  loadMedById(id: string): Observable<IMed> {
+    return this.http.get<IMed>(`${apiUrl}/meds/${id}.json`)
+  }
+
 }

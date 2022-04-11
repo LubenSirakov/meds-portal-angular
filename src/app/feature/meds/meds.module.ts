@@ -8,6 +8,7 @@ import { MedsListLitemComponent } from './meds-list-litem/meds-list-litem.compon
 import { MedsPageComponent } from './meds-page/meds-page.component';
 import { FormsModule } from '@angular/forms';
 import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
+import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.component';
 
 
 
@@ -18,7 +19,8 @@ import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
     MedsListLitemComponent,
     LatestMedsComponent,
     MedsPageComponent,
-    MedsNewPageComponent
+    MedsNewPageComponent,
+    MedsDetailPageComponent
   ],
   imports: [
     CommonModule,

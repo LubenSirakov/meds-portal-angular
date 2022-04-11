@@ -1,0 +1,30 @@
+<div class='details-card' *ngIf="med">
+    <img src={{med.imgUrl}} class="card-img-details" alt={{med.name}} />
+    <div class='text-container'>
+        <h3 class='card-name'>{{med.name}}</h3>
+        <h5 class='card-tablets'>Count of tablets: {{med.count}}</h5>
+        <p class='card-description'>{{med.description}}</p>
+    </div>
+
+    <div>
+        <p>Login to add this to your meds</p>
+        <button class="button-details">
+            <a to="/login">Login</a>
+        </button>
+    </div>
+
+    <div class="buttons-container">
+
+        <button class="button-details">
+            <a>Edit</a>
+        </button>
+        <button class="button-details">
+            <a to="/">Delete</a>
+        </button>
+
+        <h4>This med is already in your collection</h4>
+        <button class="button-details">Add to my meds</button>
+
+    </div>
+
+</div>

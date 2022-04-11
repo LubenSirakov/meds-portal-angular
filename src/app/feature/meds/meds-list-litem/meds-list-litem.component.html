@@ -3,6 +3,8 @@
     <div class="card-body">
         <h2>{{med.name}}</h2>
         <p>Count of tablets: {{med.count}}</p>
-        <button class="button-learn-more"> Learn more</button>
+        <button class="button-learn-more">
+            <a [routerLink]="['/meds', med.medId]">Learn more</a>
+        </button>
     </div>
 </div>

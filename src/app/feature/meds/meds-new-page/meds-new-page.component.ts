@@ -23,8 +23,8 @@ export class MedsNewPageComponent implements OnInit {
   }
 
   submitNewMed(newMedForm: NgForm): void {
-    let medForm = {... newMedForm.value, owner: this.currentUserId, medId: uniqId() }
-    console.log(medForm)
+    let medForm = {... newMedForm.value, owner: this.currentUserId, medId: uniqId.time() }
+    console.log(medForm.medId)
     this.medService.addMed$(medForm).subscribe({
       next: (med) => {
         console.log(med)
