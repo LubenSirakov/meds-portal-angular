@@ -5,15 +5,20 @@ import { IMed } from './interfaces/med';
 import * as uniqId from 'uniqid'
 import { AuthService } from '../auth.service';
 import { IUser } from './interfaces/user';
+// import { getDatabase, ref, set } from 'firebase/database';
+import { getDatabase, ref, set } from '@angular/fire/database';
 
 const apiUrl = 'https://meds-portal-69e7a-default-rtdb.europe-west1.firebasedatabase.app';
 
 @Injectable()
 export class MedsService {
 
+  db = getDatabase();
+  dbRef = ref(getDatabase())
+
   constructor(private http: HttpClient) { }
 
-  addMed$(
+  addMed(
     body: {
       name: string,
       description: string,
@@ -22,8 +27,8 @@ export class MedsService {
       owner: string,
       medId: string,
       lists: []
-    }): Observable<IMed> {
-    return this.http.post<IMed>(`${apiUrl}/meds.json`, body);
+    }) {
+    set(ref(this.db, `meds/${body.medId}`), body)
   }
 
   loadMedList(): Observable<IMed[]> {

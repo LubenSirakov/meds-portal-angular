@@ -19,7 +19,6 @@ export class MedsListComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {
     this.medService.loadMedList().subscribe(medList => {
       let meds = Object.values(medList);
-      console.log(meds)
       this.medList = meds;
     })
   }

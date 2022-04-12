@@ -20,20 +20,21 @@ export class MedsNewPageComponent implements OnInit {
   constructor(private router: Router, private medService: MedsService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    console.log(this.currentUserId)
+
   }
 
   submitNewMed(newMedForm: NgForm): void {
-    let medForm = {... newMedForm.value, owner: this.currentUserId, medId: uniqId.time() }
+    console.log(this.currentUserId)
+    let medForm = {... newMedForm.value, owner: this.currentUserId, medId: uniqId() }
     console.log(medForm.medId)
-    this.medService.addMed$(medForm).subscribe({
-      next: (med) => {
-        console.log(med)
-        this.router.navigate(['/all-meds']);
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
+    try {
+      this.medService.addMed(medForm)
+      
+      this.router.navigate(['/all-meds'])
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   navigateToHome() {

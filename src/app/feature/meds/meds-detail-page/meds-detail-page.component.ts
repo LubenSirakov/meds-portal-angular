@@ -24,9 +24,12 @@ export class MedsDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      console.log(params)
       const medId = params['medId'];
+      console.log(medId)
       this.medService.loadMedById(medId).subscribe(med => {
         this.med = med;
+        console.log(this.med)
       })
     })
 

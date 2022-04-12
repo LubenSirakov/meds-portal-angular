@@ -46,6 +46,7 @@ export class AuthService {
       .then(res => {
         this.user = res.user
         console.log(this.user)
+        this.handleLogin(this.user)
         this.currentUserId = res.user?.uid;
         localStorage.setItem('userId', this.currentUserId!)
         this.isLoggedIn = true;
@@ -58,8 +59,7 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
-    this.angularFireAuth
-      .signOut();
+    this.angularFireAuth.signOut();
   }
 
   // authenticate(): Observable<IUser> {
@@ -70,6 +70,8 @@ export class AuthService {
 
   handleLogin(newUser: IUser) {
     this._currentUser.next(newUser);
+    console.log(this._currentUser);
+    console.log(this.isLoggedIn$)
   }
 
   handleLogout() {
