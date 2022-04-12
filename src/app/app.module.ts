@@ -22,12 +22,14 @@ import { MedsNewPageComponent } from './feature/meds/meds-new-page/meds-new-page
 import { AngularFireModule } from '@angular/fire/compat';
 import { AuthService } from './auth.service';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { firebaseConfig } from 'firebase';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(firebaseConfig),
     BrowserModule,
     HttpClientModule,
     CoreModule.forRoot(),
@@ -36,7 +38,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     RouterModule,
     PagesModule,
     AuthModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule
   ],

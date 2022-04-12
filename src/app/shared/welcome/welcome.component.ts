@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  isLoggedIn: boolean = true; //todo: app proper user service
+  // isLoggedIn: boolean = true; //todo: app proper user service
 
   constructor() { }
 

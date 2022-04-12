@@ -5,7 +5,6 @@ import { IMed } from './interfaces/med';
 import * as uniqId from 'uniqid'
 import { AuthService } from '../auth.service';
 import { IUser } from './interfaces/user';
-// import { getDatabase, ref, set } from 'firebase/database';
 import { getDatabase, ref, set } from '@angular/fire/database';
 
 const apiUrl = 'https://meds-portal-69e7a-default-rtdb.europe-west1.firebasedatabase.app';

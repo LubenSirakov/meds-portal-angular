@@ -19,12 +19,12 @@ export class MedsDetailPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private medService: MedsService,
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params)
+      console.log(this.isLoggedIn$)
       const medId = params['medId'];
       console.log(medId)
       this.medService.loadMedById(medId).subscribe(med => {
