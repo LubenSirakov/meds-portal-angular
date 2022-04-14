@@ -15,15 +15,18 @@
 
     <div class="buttons-container" *ngIf="(isLoggedIn$ | async)">
 
-        <button class="button-details">
-            <a>Edit</a>
-        </button>
-        <button class="button-details">
-            <a to="/">Delete</a>
-        </button>
+        <div *ngIf="currentUserIsOwner()">
+            <button class="button-details">
+                <a [routerLink]="['/meds/edit', med.medId]">Edit</a>
+            </button>
+            <button class="button-details" (click)="deleteHandler(med.medId)">
+                Delete
+            </button>
+        </div>
 
-        <h4>This med is already in your collection</h4>
-        <button class="button-details">Add to my meds</button>
+        <h4 *ngIf="canAddToMedList">This med is already in your collection</h4>
+
+        <button class="button-details" (click)="addMedHandler()" *ngIf="!canAddToMedList">Add to my meds</button>
 
     </div>
 

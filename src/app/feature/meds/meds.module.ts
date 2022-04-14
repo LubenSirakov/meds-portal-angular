@@ -9,6 +9,7 @@ import { MedsPageComponent } from './meds-page/meds-page.component';
 import { FormsModule } from '@angular/forms';
 import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
 import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.component';
+import { EditMedComponent } from './edit-med/edit-med.component';
 
 
 
@@ -20,7 +21,8 @@ import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.com
     LatestMedsComponent,
     MedsPageComponent,
     MedsNewPageComponent,
-    MedsDetailPageComponent
+    MedsDetailPageComponent,
+    EditMedComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.com
     MedsListLitemComponent,
     LatestMedsComponent,
     MedsPageComponent,
+    EditMedComponent
   ]
 })
 export class MedsModule { }

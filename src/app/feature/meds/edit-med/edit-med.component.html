@@ -1,0 +1,30 @@
+<form class="create" #editedMedForm="ngForm" (ngSubmit)="submitEditedMed(editedMedForm)">
+
+    <h2>Create Med
+        <img id='form-drug'
+            src='https://cdn-icons.flaticon.com/png/512/3837/premium/3837740.png?token=exp=1640204300~hmac=d2a019bdf675c65aeb4c5909343aab53' />
+    </h2>
+
+    <div class="mb-3">
+        <label for="medName" class="form-label">Med Name</label>
+        <input #name="ngModel" [(ngModel)]="med.name" type="text" name="name" class="form-control" id="medName" required minlength="3" />
+    </div>
+
+    <div class="mb-3">
+        <label for="medDescription" class="form-label">Description</label>
+        <textarea #description="ngModel" [(ngModel)]="med.description" type="text" name="description" class="form-control" id="medDescription">
+            </textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="medCount" class="form-label">Count of tablets</label>
+        <input #count="ngModel" [(ngModel)]="med.count" type="text" name="count" class="form-control" id="medCount" />
+    </div>
+
+    <div class="mb-3">
+        <label for="medImage" class="form-label">Image</label>
+        <input #imgUrl="ngModel" [(ngModel)]="med.imgUrl"  type="text" name="imgUrl" class="form-control" id="medImage" />
+    </div>
+
+    <button type="submit" class="submit">Submit</button>
+</form>

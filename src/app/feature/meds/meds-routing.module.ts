@@ -7,6 +7,7 @@ import { MedsPageComponent } from './meds-page/meds-page.component';
 import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
 import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.component';
+import { EditMedComponent } from './edit-med/edit-med.component';
 
 const routes: Routes = [
   {
@@ -15,17 +16,17 @@ const routes: Routes = [
   },
   {
     path: 'meds/new',
-    canActivate:  [AuthGuard],
+    canActivate: [AuthGuard],
     component: MedsNewPageComponent
   },
   {
     path: 'meds/:medId',
     component: MedsDetailPageComponent
+  },
+  {
+    path: 'meds/edit/:medId',
+    component: EditMedComponent
   }
-  // {
-  //   path: 'latest-meds',
-  //   component: LatestMedsComponent
-  // },
 ]
 
 export const MedsRoutingModule = RouterModule.forChild(routes);
