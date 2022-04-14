@@ -24,9 +24,9 @@
             </button>
         </div>
 
-        <h4 *ngIf="canAddToMedList">This med is already in your collection</h4>
+        <h4 *ngIf="checkIfMedInUserCollection()">This med is already in your collection</h4>
 
-        <button class="button-details" (click)="addMedHandler()" *ngIf="!canAddToMedList">Add to my meds</button>
+        <button class="button-details" (click)="addMedHandler()" *ngIf="!checkIfMedInUserCollection()">Add to my meds</button>
 
     </div>
 

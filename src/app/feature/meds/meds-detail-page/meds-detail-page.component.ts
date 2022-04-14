@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
@@ -21,9 +21,9 @@ export class MedsDetailPageComponent implements OnInit {
   currentUserId?: string = this.authService.currentUserId;
   medOwner: string = '';
   medId: string = '';
-  usersMedList: string[] = [];
+  usersMedList!: string[];
 
-  canAddToMedList: boolean = false;
+  canAddToMedList: boolean = true;
 
   currentUserIsOwner() {
     if (this.currentUserId === this.medOwner) {
@@ -31,7 +31,14 @@ export class MedsDetailPageComponent implements OnInit {
     } else {
       return false;
     }
+  }
 
+  checkIfMedInUserCollection() {
+    let medsArray: any = Object.values(this.usersMedList)[0];
+
+    let currentMedId = this.medId;
+
+    return medsArray.includes(currentMedId);
   }
 
   constructor(
@@ -43,28 +50,20 @@ export class MedsDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      console.log(this.isLoggedIn$)
       const medId = params['medId'];
-      console.log(medId)
-
       this.medService.loadMedById(medId).subscribe(med => {
         this.med = med;
         this.medOwner = med.owner
         this.medId = med.medId
-        console.log(this.med)
       })
-
-      this.checkIfMedInUserCollection()
+    })
+    let medsList: string[] = [];
+    
+    this.medService.getUserMeds(this.currentUserId).subscribe(medList => {
+      this.usersMedList = medList
+      medsList = medList;
     })
 
-  }
-
-  async checkIfMedInUserCollection() {
-    this.usersMedList = await this.medService.getUsersMeds(this.currentUserId);
-
-    if (this.usersMedList.includes(this.medId)) {
-      this.canAddToMedList = !this.usersMedList.includes(this.medId)
-    }
   }
 
   deleteHandler(medId: string) {

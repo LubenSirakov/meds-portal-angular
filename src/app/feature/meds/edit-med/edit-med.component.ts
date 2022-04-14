@@ -37,7 +37,7 @@ export class EditMedComponent implements OnInit {
   }
 
   submitEditedMed(editedMedForm: NgForm): void {
-    let medForm = {...editedMedForm.value, owenr: this.medOwner, medId: this.medId}
+    let medForm = {...editedMedForm.value, owner: this.medOwner, medId: this.medId}
     try {
       this.medService.editMed(medForm);
 

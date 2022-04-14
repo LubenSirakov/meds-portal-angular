@@ -37,6 +37,10 @@ export class MedsService {
   loadMedById(id: string): Observable<IMed> {
     return this.http.get<IMed>(`${apiUrl}/meds/${id}.json`)
   }
+
+  getUserMeds(userId?: string): Observable<string[]> {
+    return this.http.get<string[]>(`${apiUrl}/userData/${userId}.json`)
+  }
   // EDIT MED
   editMed(
     body: {
@@ -101,17 +105,17 @@ export class MedsService {
 
   }
   // GET USERS MEDS COLLECTION
-  async getUsersMeds(userId?: string) {
-    try {
-      let snapshot = await get(child(this.dbRef, `userData/${userId}/medsList`))
+  // async getUsersMeds(userId?: string) {
+  //   try {
+  //     let snapshot = await get(child(this.dbRef, `userData/${userId}/medsList`))
 
-      if (snapshot.exists()) {
-        let res = snapshot.val();
+  //     if (snapshot.exists()) {
+  //       let res = snapshot.val();
 
-        return res;
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //       return res;
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 }
