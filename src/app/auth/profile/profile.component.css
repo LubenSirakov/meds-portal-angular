@@ -1,0 +1,108 @@
+.my-profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    background-color:#D8F3DC;
+}
+
+/* .profile-wrapper {
+    max-width: 400px;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 1rem;
+    background: #B7E4C7;
+    box-shadow: 0 0 5px 0 #bbb;
+    border-radius: 2%;
+} */
+
+.profile {
+    width: 380px;
+    height: 400px;
+    background: #B7E4C7;
+	transition: background .6s ease;
+	border-radius: 10px;
+	padding: 20px 20px 20px 20px;
+	box-shadow: 0 8px 40px rgba(#000000, .2);
+}
+
+.user-meds-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #D8F3DC;
+    align-items: baseline ;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 1rem;
+    background: #B7E4C7;
+    box-shadow: 0 0 5px 0 #bbb;
+    border-radius: 2%;
+}
+
+.thumbnail {
+    width: 140px;
+    height: 120px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    border-radius: 100%;
+    box-shadow: seashell;
+}
+
+.name {
+    color: #2D354A;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.description {
+    color: #080911;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 1.3em;
+}
+
+.btn {
+    text-decoration: none;
+    background: #74C69D;
+    width: 150px;
+    padding:8px;
+    border:none;
+    font-size:20px;
+    border-radius:6px;
+    cursor:pointer;
+    color: #1B4332;
+    font-weight:bold;
+    transition:0.3s ease all;
+    box-shadow:1px 2px 3px rgba(0,0,0,0.3); 
+}
+
+.btn a {
+    text-decoration: none;
+    color: #1B4332;
+}
+
+.btn a:hover {
+    color: #dbe6dd;
+   
+}
+
+.btn:hover {
+    color: #dbe6dd;
+    transform: scale(1.03);
+    box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+}
+
+.btn-wrapper {
+    display: flex;
+		margin-top: 6rem;
+		justify-content: space-between;
+}

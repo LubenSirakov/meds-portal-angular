@@ -4,7 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     CommonModule

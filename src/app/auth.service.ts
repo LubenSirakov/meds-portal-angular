@@ -62,12 +62,6 @@ export class AuthService {
     this.angularFireAuth.signOut();
   }
 
-  // authenticate(): Observable<IUser> {
-  //   return this.angularFireAuth
-  //     .get<IUser>()
-
-  // }
-
   handleLogin(newUser: IUser) {
     this._currentUser.next(newUser);
     console.log(this._currentUser);

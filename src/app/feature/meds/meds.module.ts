@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
 import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.component';
 import { EditMedComponent } from './edit-med/edit-med.component';
-
-
+import { UserAddedMedsComponent } from './user-added-meds/user-added-meds.component';
+import { MyMedsComponent } from './my-meds/my-meds.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,9 @@ import { EditMedComponent } from './edit-med/edit-med.component';
     MedsPageComponent,
     MedsNewPageComponent,
     MedsDetailPageComponent,
-    EditMedComponent
+    EditMedComponent,
+    UserAddedMedsComponent,
+    MyMedsComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { EditMedComponent } from './edit-med/edit-med.component';
     MedsListLitemComponent,
     LatestMedsComponent,
     MedsPageComponent,
-    EditMedComponent
+    EditMedComponent,
+    UserAddedMedsComponent
   ]
 })
 export class MedsModule { }

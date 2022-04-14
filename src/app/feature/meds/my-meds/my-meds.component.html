@@ -1,0 +1,7 @@
+<div *ngIf="myMedsList" class="meds-list">
+    <app-meds-list-litem *ngFor="let med of myMedsList" [med]="med"></app-meds-list-litem>
+<div *ngIf="myMedsList.length === 0">No meds!</div>
+</div>
+<div *ngIf="!myMedsList">
+Loading...
+</div>

@@ -104,18 +104,4 @@ export class MedsService {
     }
 
   }
-  // GET USERS MEDS COLLECTION
-  // async getUsersMeds(userId?: string) {
-  //   try {
-  //     let snapshot = await get(child(this.dbRef, `userData/${userId}/medsList`))
-
-  //     if (snapshot.exists()) {
-  //       let res = snapshot.val();
-
-  //       return res;
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
 }

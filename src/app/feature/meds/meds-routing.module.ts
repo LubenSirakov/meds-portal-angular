@@ -8,6 +8,8 @@ import { MedsNewPageComponent } from './meds-new-page/meds-new-page.component';
 import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { MedsDetailPageComponent } from './meds-detail-page/meds-detail-page.component';
 import { EditMedComponent } from './edit-med/edit-med.component';
+import { UserAddedMedsComponent } from './user-added-meds/user-added-meds.component';
+import { MyMedsComponent } from './my-meds/my-meds.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'meds/edit/:medId',
     component: EditMedComponent
+  },
+  {
+    path: 'user-added/:userId',
+    component: UserAddedMedsComponent
+  },
+  {
+    path: 'my-meds/:userId',
+    component: MyMedsComponent
   }
 ]
 

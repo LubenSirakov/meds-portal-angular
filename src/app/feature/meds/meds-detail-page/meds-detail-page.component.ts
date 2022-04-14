@@ -34,7 +34,7 @@ export class MedsDetailPageComponent implements OnInit {
   }
 
   checkIfMedInUserCollection() {
-    let medsArray: any = Object.values(this.usersMedList)[0];
+    let medsArray: any = Object.values(this.usersMedList!)[0];
 
     let currentMedId = this.medId;
 
