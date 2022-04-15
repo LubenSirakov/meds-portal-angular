@@ -12,6 +12,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
   userData: Observable<any>;
+  errorMessage: string = '';
 
   private _currentUser = new BehaviorSubject<any>(undefined);
 
@@ -36,7 +37,8 @@ export class AuthService {
         console.log('Successfully registered!', res);
       })
       .catch(error => {
-        console.log('Something went wrong', error.message)
+        this.errorMessage = error.message;
+        console.log('Something went wrong', this.errorMessage)
       })
   }
 
@@ -45,7 +47,6 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(res => {
         this.user = res.user
-        console.log(this.user)
         this.handleLogin(this.user)
         this.currentUserId = res.user?.uid;
         localStorage.setItem('userId', this.currentUserId!)
@@ -53,7 +54,8 @@ export class AuthService {
         console.log('Successfuly logged in!', res)
       })
       .catch(error => {
-        console.log('Something went wrong', error.message);
+        this.errorMessage = error.message;
+        console.log('Something went wrong', this.errorMessage);
       })
   }
 

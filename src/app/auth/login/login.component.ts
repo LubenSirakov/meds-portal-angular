@@ -10,7 +10,7 @@ import { emailValidator } from '../util';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  errorMessage: string = '';
+  errorMessage: any = '';
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('',{validators: [Validators.required, emailValidator], updateOn: 'blur'}),
@@ -31,12 +31,13 @@ export class LoginComponent implements OnInit {
     let password = this.loginFormGroup.value['password']
 
     try {
-      
       this.authService.login(email, password)
       
       this.router.navigate(['/home'])
     } catch (error) {
       console.log(error)
+      this.errorMessage = this.authService.errorMessage
+      console.log(this.errorMessage)
     }
 
   }

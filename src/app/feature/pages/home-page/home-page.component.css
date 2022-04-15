@@ -39,3 +39,11 @@ background-color: #D8F3DC;
 .register-link:hover {
     color: #fff;
 }
+
+.all-meds-link {
+    margin-top: 50px;
+}
+
+.all-meds-link:hover {
+    transform: scale(1.3);
+}
