@@ -27,14 +27,17 @@ const routes: Routes = [
   },
   {
     path: 'meds/edit/:medId',
+    canActivate: [AuthGuard],
     component: EditMedComponent
   },
   {
     path: 'user-added/:userId',
+    canActivate: [AuthGuard],
     component: UserAddedMedsComponent
   },
   {
     path: 'my-meds/:userId',
+    canActivate: [AuthGuard],
     component: MyMedsComponent
   }
 ]

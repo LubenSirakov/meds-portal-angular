@@ -7,7 +7,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
         return null;
     }
 
-    if(!/.{5,}@gmail\.(bg|com)/.test(value)) {
+    if(!/.{4,}@.{1,}\.(bg|com)/.test(value)) {
         return {
             email: true
         }

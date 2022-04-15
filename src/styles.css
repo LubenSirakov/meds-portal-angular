@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Love+Light&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 body{
     background-color: #D8F3DC;
     margin: 0;
@@ -15,4 +16,12 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #D8F3DC;
+}
+
+.error {
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgb(222, 57, 57);
 }

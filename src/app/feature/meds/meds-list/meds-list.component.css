@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Love+Light&family=Pacifico&display=swap');
+
 .meds-list{
     display: flex;
     flex-direction: row;
@@ -5,4 +7,11 @@
     justify-content: center;
     align-items: center;
     padding-top: 100px;
+}
+
+#header-title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: #1B4332;
 }

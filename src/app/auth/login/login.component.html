@@ -1,20 +1,21 @@
-<form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()" >
-    
-    <h2 class="form-title">Login<img id='login-drug' src='https://cdn-icons-png.flaticon.com/512/1546/1546140.png' /></h2>
-    
+<form class="login" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
+
+    <h2 class="form-title">Login<img id='login-drug' src='https://cdn-icons-png.flaticon.com/512/1546/1546140.png' />
+    </h2>
+
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
-        <input formControlName="email" type="email" name="email"  class="form-control"
-            id="exampleInputEmail1" aria-describedby="emailHelp" />
+        <input formControlName="email" type="email" name="email" class="form-control" id="exampleInputEmail1"
+            aria-describedby="emailHelp" />
     </div>
     <ng-container *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
         <p *ngIf="loginFormGroup.controls['email'].errors!['required']" class="error">
             Email is required!
         </p>
 
-        <!-- <p *ngIf="loginFormGroup.controls['email'].errors!.email" class="error">
+        <p *ngIf="loginFormGroup.controls['email'].errors!['email']" class="error">
             Email is not valid!
-        </p> -->
+        </p>
     </ng-container>
 
     <div class="mb-3">
@@ -22,8 +23,17 @@
         <input formControlName="password" type="password" name="password" class="form-control"
             id="exampleInputPassword1" />
     </div>
+    <ng-container *ngIf="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid">
 
-    <button class="submit">Submit</button>
+        <p *ngIf="loginFormGroup.controls['password'].errors!['required']" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="loginFormGroup.controls['password'].errors!['minlength']" class="error">
+            Password must be at least 5 characters!
+        </p>
+    </ng-container>
+
+    <button class="submit" [disabled]="loginFormGroup.invalid">Submit</button>
     <p>New here?
         <a routerLink="/register">Register</a>
     </p>

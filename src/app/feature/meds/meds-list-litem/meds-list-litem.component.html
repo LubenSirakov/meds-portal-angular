@@ -1,8 +1,8 @@
 <div class="card" *ngIf="med">
     <img src={{med.imgUrl}} alt={{med.name}} class="med-image" />
     <div class="card-body">
-        <h2>{{med.name}}</h2>
-        <p>Count of tablets: {{med.count}}</p>
+        <h2 class="card-name">{{med.name}}</h2>
+        <p class="card-count">Count of tablets: {{med.count}}</p>
         <button class="button-learn-more">
             <a [routerLink]="['/meds', med.medId]">Learn more</a>
         </button>

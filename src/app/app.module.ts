@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AuthService } from './auth.service';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { firebaseConfig } from 'firebase';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { firebaseConfig } from 'firebase';
   ],
   bootstrap: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class AppModule { }

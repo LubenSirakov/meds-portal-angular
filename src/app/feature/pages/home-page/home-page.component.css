@@ -23,9 +23,19 @@ background-color: #D8F3DC;
     background: #B7E4C7;
     box-shadow: 0 0 5px 0 #bbb;
     border-radius: 2%;
+    text-align: center;
 }
 
 #middle-drugs {
     margin-top: 5%;
     width: 80px;
+}
+
+.register-link{
+    text-decoration: none;
+    color: #1B4332;
+}
+
+.register-link:hover {
+    color: #fff;
 }

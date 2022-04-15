@@ -5,12 +5,32 @@
         <input formControlName="email" type="email" name="email" class="form-control" id="exampleInputEmail1"
             aria-describedby="emailHelp" />
     </div>
+    <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
+        <p *ngIf="registerFormGroup.controls['email'].errors!['required']" class="error">
+            Email is required!
+        </p>
+
+        <p *ngIf="registerFormGroup.controls['email'].errors!['email']" class="error">
+            Email is not valid!
+        </p>
+    </ng-container>
+
     <div class="mb-3">
-        <label for="email" class="form-label">Password</label>
-        <input formControlName="email" type="password" name="password" class="form-control"
+        <label for="password" class="form-label">Password</label>
+        <input formControlName="password" type="password" name="password" class="form-control"
             id="exampleInputPassword1" />
     </div>
-    <button type="submit" class="submit">Submit</button>
-    <p>Already have an account? <a to="/login">Login</a></p>
+    <ng-container *ngIf="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid">
+
+        <p *ngIf="registerFormGroup.controls['password'].errors!['required']" class="error">
+            Password is required!
+        </p>
+        <p *ngIf="registerFormGroup.controls['password'].errors!['minlength']" class="error">
+            Password must be at least 5 characters!
+        </p>
+    </ng-container>
+
+    <button type="submit" [disabled]="registerFormGroup.invalid" class="submit">Submit</button>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
 
 </form>

@@ -11,7 +11,7 @@ import { emailValidator } from '../util';
 })
 export class RegisterComponent implements OnInit {
 
-  passwordControl = new FormControl(null, [Validators.required, Validators.minLength(5)])
+  // passwordControl = new FormControl(null, [Validators.required, Validators.minLength(5)])
 
   registerFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('',{validators: [Validators.required, emailValidator], updateOn: 'blur'}),

@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     let password = this.loginFormGroup.value['password']
 
     try {
+      
       this.authService.login(email, password)
       
       this.router.navigate(['/home'])
@@ -39,22 +40,5 @@ export class LoginComponent implements OnInit {
     }
 
   }
-
-  // handleLogin(): void {
-  //   console.log(this.loginFormGroup.value)
-  //   this.errorMessage = '';
-  //   this.authService.login$(this.loginFormGroup.value).subscribe({
-  //     next: user => {
-  //       console.log(user);
-  //       this.router.navigate(['/home']);
-  //     },
-  //     complete: () => {
-  //       console.log('login completed')
-  //     },
-  //     error: err => {
-  //       this.errorMessage = err.error.message;
-  //     }
-  //   })
-  // }
 
 }

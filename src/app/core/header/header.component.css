@@ -15,26 +15,53 @@ app-header {
     background-color: #1B4332;
     width: 100%;
     height: 60px;
-    font-family: Pacifico;
+}
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo-tag {
+    font-family: 'Pacifico', cursive;
+    font-size: 35px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.logo-tag:hover {
+    color: #52B788;
 }
 
 #menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: baseline;
     list-style: none;
     text-decoration: none;
     color: white;
+    margin-right: 30px;
 }
 
 .menu-item {
     list-style: none;
-    margin-right: 5px;
+    margin-right: 15px;
+}
+
+.menu-item:hover {
+    color: #52B788;
+    transition: all 1s ease;
 }
 
 a {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
     text-decoration: none;
     color: white;
+}
+
+a:hover {
+    color: #D8F3DC;
 }
 
 #drug-icon {

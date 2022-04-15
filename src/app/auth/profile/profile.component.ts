@@ -19,16 +19,6 @@ export class ProfileComponent implements OnInit {
 
   medsAddedByCurrentUser: IMed[] = [];
 
-  // filterMedsAdedByUser() {
-  //   this.medList.filter(med => {
-  //     console.log(med)
-  //     if(med.owner === this.currentUserId){
-  //       console.log(med.owner, this.currentUserId)
-  //       this.medsAddedByCurrentUser.push(med);
-  //     }
-  //   })
-  // }
-
   constructor(
     private authService: AuthService,
     private router: Router,
