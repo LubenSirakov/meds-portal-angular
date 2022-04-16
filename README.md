@@ -1,27 +1,30 @@
-# MedsPortal
+# Welcome to Meds Portal 
+Meds Portal is the place where you'll find anything and everything about meds. Here you can add new meds, edit existing ones, add meds to your collection, and much more!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+## Overall
+This is my submission for the regular Angular exam by SoftUni.
+For this project I've used Angular for the client-side and Firebase for the back-end.
 
-## Development server
+## Functionality
+As a guset you can view the Home page, All meds, Login and Register pages. However you cannot interact with the meds in the database without login in.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+As a registered user you can view all pagesand interact with the meds.
+You can register and login with email and password.
 
-## Code scaffolding
+You can add new meds to the databse and edit the ones you've added.
+If you wish you can also delete a med from the database, but only if it's uploaded by the current user.
+In My Profile page you'll see all the meds you've added. If you click on My Meds you'll see the meds you added to your personal collection.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How to run the app?
 
-## Build
+In the project directory, you can run:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### `ng serve`
 
-## Running unit tests
+Runs the app in the development mode.\
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+Or you can visit https://meds-portal-69e7a.web.app/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
